@@ -1,1 +1,4 @@
 .idea/
+_DEV_NOTES/*
+express_front/node_modules/
+

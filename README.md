@@ -1,2 +1,6 @@
-# lumen_express_project
-Test project to experiment tech stack
+```angular2html
+vuelidate
+class-based vue
+typescript
+vue-orm
+```
