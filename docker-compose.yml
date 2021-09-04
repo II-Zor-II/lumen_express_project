@@ -1,0 +1,72 @@
+version: '3'
+services:
+  express_front:
+    build:
+      context: ./express_front
+      dockerfile: Dockerfile
+    depends_on:
+      - lumen_api_backend
+    volumes:
+      - './express_front/:/var/app'
+    ports:
+      - 3000:3000
+    networks:
+      - lumen_express_network
+    tty: true
+  lumen_api_backend:
+    build:
+      context: ./lumen_api
+      dockerfile: Dockerfile
+      args:
+        DOCKERGROUP: 1000
+    ports:
+      - 80:80
+      - 8080:8080
+    volumes:
+      - './lumen_api/.:/var/app'
+    environment:
+      DOCKERUSER: 1000
+    networks:
+      - lumen_express_network
+    depends_on:
+      - mysql
+      - redis
+    tty: true
+  redis:
+    image: 'redis:alpine'
+    ports:
+      - '${FORWARD_REDIS_PORT:-6379}:6379'
+    volumes:
+      - 'lumen_express_redis:/data'
+    networks:
+      - lumen_express_network
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      retries: 3
+      timeout: 5s
+  mysql:
+    image: 'mysql:8.0'
+    ports:
+      - '${FORWARD_DB_PORT:-3306}:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - 'lumen_express_mysql:/var/lib/mysql'
+    networks:
+      - lumen_express_network
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-p${DB_PASSWORD}']
+      retries: 3
+      timeout: 5s
+networks:
+  lumen_express_network:
+    driver: bridge
+volumes:
+  lumen_express_mysql:
+    driver: local
+  lumen_express_redis:
+    driver: local
