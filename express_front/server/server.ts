@@ -13,9 +13,12 @@ var path = require('path');
 
 const viewsPath = path.resolve(__dirname + '/../app/src/views');
 
+app.use(express.static(path.resolve(__dirname + '/../app/public')));
+
 app.get('/', (req, res) => {
     res.type('html').sendFile(viewsPath + '/index/index.html');
 });
+
 
 app.listen(PORT, HOST);
 
