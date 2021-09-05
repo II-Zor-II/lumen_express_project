@@ -11,14 +11,9 @@ const app = express();
 
 var path = require('path');
 
-const viewsPath = path.resolve(__dirname + '/../app/src/views');
+const publicPath = path.resolve(__dirname + '/../app/public');
 
-app.use(express.static(path.resolve(__dirname + '/../app/public')));
-
-app.get('/', (req, res) => {
-    res.type('html').sendFile(viewsPath + '/index/index.html');
-});
-
+app.use(express.static(publicPath));
 
 app.listen(PORT, HOST);
 
