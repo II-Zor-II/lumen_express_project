@@ -1,10 +1,9 @@
 import Vue from 'vue';
+// @ts-ignore
+import App from './App.vue';
 
-console.log('test v2');
+Vue.config.productionTip = false;
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue!'
-  }
-});
+new Vue({
+  render: h => h(App)
+}).$mount('#app');

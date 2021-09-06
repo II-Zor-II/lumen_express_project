@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "vue-cli-service lint",
     "start-server": "node server/server.ts",
-    "dev-watch": "npx vue-cli-service build --watch"
+    "dev": "npx vue-cli-service serve"
   },
   "main": "server/server.js",
   "dependencies": {

@@ -3,7 +3,15 @@ module.exports = {
   assetsDir: './assets',
   runtimeCompiler: true,
   devServer: {
-    host: 'localhost'
+    host: '0.0.0.0',
+    public: 'localhost:3000',
+    port: 3000,
+    https: false,
+    hot: true,
+    clientLogLevel: 'info',
+    watchOptions: {
+      poll: true
+    }
   },
   pages: {
     index: {
