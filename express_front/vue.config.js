@@ -21,5 +21,11 @@ module.exports = {
       title: 'Express Front App',
       chunks: ['chunk-vendors', 'chunk-common', 'index']
     }
+  },
+  chainWebpack(config) {
+    config.resolve.alias.delete('@');
+    config.resolve
+      .plugin('tsconfig-paths')
+      .use(require('tsconfig-paths-webpack-plugin'))
   }
 };

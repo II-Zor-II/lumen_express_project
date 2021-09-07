@@ -1,5 +1,10 @@
 import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-const app = new Vue({
+const routes = require('@/routers/router.ts');
 
-}).$mount('#app');
+const router = new VueRouter(routes);
+
+const app = new Vue(
+  router
+).$mount('#app');
