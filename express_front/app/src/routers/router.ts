@@ -1,6 +1,7 @@
 module.exports = {
   routes: [
-    { path: '/foo', component: { template: '<div>foo</div>' } },
-    { path: '/bar', component: { template: '<div>bar</div>' } }
-  ]
+    {path: '/Foo', component: {template: '<div><h1>Test</h1></div>'}},
+    {path: '/Bar', component: {template: '<div>bar</div>'}}
+  ],
+  mode: 'history'
 }

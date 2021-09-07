@@ -22,7 +22,7 @@ module.exports = {
       chunks: ['chunk-vendors', 'chunk-common', 'index']
     }
   },
-  chainWebpack(config) {
+  chainWebpack(config) { // @docs : https://github.com/vuejs/vue-cli/issues/3123
     config.resolve.alias.delete('@');
     config.resolve
       .plugin('tsconfig-paths')

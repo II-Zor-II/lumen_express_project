@@ -10,7 +10,10 @@ module.exports = {
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'semi': 'off',
+    'object-curly-spacing': 'warn',
+    'no-unused-vars': 'warn'
   },
   extends: [
     '@vue/standard',
