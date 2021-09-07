@@ -17,9 +17,7 @@
       "webpack-env"
     ],
     "paths": {
-      "@/*": [
-        "app/src/*"
-      ]
+      "@/*": ["app/src/*"]
     },
     "lib": [
       "esnext",
@@ -29,6 +27,9 @@
     ]
   },
   "include": [
+    "app/src/*.ts",
+    "app/src/*.vue",
+    "app/src/*.tsx",
     "app/src/**/*.ts",
     "app/src/**/*.tsx",
     "app/src/**/*.vue",

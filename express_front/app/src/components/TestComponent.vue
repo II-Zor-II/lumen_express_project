@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1> Test Hot Reload </h1>
+    <h1> {{ msg }}</h1>
     <hr>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -15,13 +15,10 @@
       <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
       <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
     </ul>
-    <h3>Ecosystem</h3>
-    <hr>
-    <h4>{{ msg }}</h4>
   </div>
 </template>
 
-<script>
+<script lang="ts">
     export default {
         name: "TestComponent",
         props: {
