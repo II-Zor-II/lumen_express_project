@@ -2,8 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 Vue.config.productionTip = false;
-// const routeConfig = require('@/routers/router.ts');
-const AppComponent = require('@/App.vue');
+
+const AppComponent = require('@/App.vue').default;
 
 const router = new VueRouter({
   routes: [
@@ -18,5 +18,7 @@ Vue.use(VueRouter);
 const app = new Vue({
   el: '#app',
   router,
-  components: {AppComponent}
+  components: {
+    AppComponent
+  }
 });

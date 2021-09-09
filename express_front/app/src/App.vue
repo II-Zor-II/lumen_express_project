@@ -1,12 +1,17 @@
 <template>
   <div>
     <h1> Main App </h1>
-    <router-view></router-view>
   </div>
 </template>
-<script lang="ts">
-  console.log("App vue");
 
+<script>
+    export default {
+        data() {
+            return {
+                msg: "Test Message"
+            }
+        }
+    }
 </script>
 
 <style>
