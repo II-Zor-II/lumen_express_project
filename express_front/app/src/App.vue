@@ -5,18 +5,18 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                msg: "Test Message"
-            }
+export default {
+    data() {
+        return {
+            msg: "Test Message"
         }
     }
+}
 </script>
 
 <style>
   #app {
-    background-color: bisque;
+    background-color: indianred;
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

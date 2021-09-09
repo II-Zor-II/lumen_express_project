@@ -13,7 +13,8 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'semi': 'warn',
     'object-curly-spacing': 'warn',
-    'no-unused-vars': 'warn'
+    'no-unused-vars': 'warn',
+    'indent': [4, 'tab']
   },
   extends: [
     '@vue/standard',

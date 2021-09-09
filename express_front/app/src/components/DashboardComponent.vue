@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1> {{ msg }}</h1>
+    <h1> DASHBOARD </h1>
     <hr>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -19,16 +19,11 @@
 </template>
 
 <script lang="ts">
-    export default {
-        name: "TestComponent",
-        props: {
-            msg: String
-        }
-    }
+export default {
+    name: 'DashboardComponent'
+}
 </script>
 
 <style>
-  body {
-    background-color: aquamarine;
-  }
+
 </style>
